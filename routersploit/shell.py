@@ -1,4 +1,5 @@
 from __future__ import absolute_import
+from future.builtins import input
 
 import socket
 import telnetlib
@@ -7,7 +8,6 @@ import threading
 try:
     from SimpleHTTPServer import SimpleHTTPRequestHandler
     from BaseHTTPServer import HTTPServer
-    input = raw_input
 except ImportError:  # Python 3.x
     from http.server import SimpleHTTPRequestHandler, HTTPServer
 
