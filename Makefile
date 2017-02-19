@@ -11,6 +11,10 @@ clean:
 	find . -name '*.pyo' -exec rm -f {} +
 	find . -name '*~' -exec rm -f  {} +
 
+docker-clean:
+	docker container prune -f
+	docker images -q -f dangling=true | xargs docker rmi
+
 lint:
 	./run_linter.sh
 
